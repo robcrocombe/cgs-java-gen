@@ -1,0 +1,20 @@
+<project name="pacs-java-gen" default="main">
+	<!-- #file -->
+	<property name="bookModel" value="" description="The Book XML model"/>
+	<!-- #file -->
+	<property name="libraryModel" value="" description="The library XML model"/>
+	
+	<target name="loadModels">
+	    <epsilon.xml.loadModel name="BM" modelfile="${bookModel}" metamodeluri="http://cs.york.ac.uk/" read="true" store="false"/>
+		<epsilon.xml.loadModel name="LM" modelfile="${libraryModel}" metamodeluri="http://cs.york.ac.uk/" read="true" store="false"/>
+	</target>
+	
+	<target name="main" depends="loadModels">
+		<epsilon.egl src="class.egl" outputroot="${outputRoot}" target="Book.java">
+			<model ref="BM"/>
+		</epsilon.egl>
+		<epsilon.egl src="class.egl" outputroot="${outputRoot}" target="Library.java">
+			<model ref="LM"/>
+		</epsilon.egl>
+	</target>
+</project>

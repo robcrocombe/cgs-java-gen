@@ -1,0 +1,15 @@
+[% var class = Class.root; %]
+[%=class.a_access%] class [%=class.a_name%] {
+[% for (property in t_property.all) %]
+[% { %]
+	[%=property.a_access%] [%=property.a_type%] [%=property.a_name%];
+[% } %]
+
+[% var privateProperties = t_property.all.select(n | n.a_access == "private"); %]
+[% for (property in privateProperties) %]
+[% { %]
+	public [%=property.a_type%] get[%=property.a_name.firstToUpperCase()%]() {
+		return [%=property.a_name%];
+	}
+[% } %]
+}
