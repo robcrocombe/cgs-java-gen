@@ -1,0 +1,5 @@
+rule classOutput
+{
+	template: "class.egl"
+	target: "class.java"
+}

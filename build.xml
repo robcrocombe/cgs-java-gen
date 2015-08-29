@@ -10,7 +10,7 @@
 	</target>
 	
 	<target name="main" depends="loadModels">
-		<epsilon.egl src="class.egl">
+		<epsilon.egl src="class.egx" outputroot="${outputRoot}">
 			<model ref="Class"/>
 		</epsilon.egl>
 	</target>
