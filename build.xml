@@ -6,8 +6,8 @@
 	<property name="libraryModel" value="" description="The library XML model"/>
 	
 	<target name="loadModels">
-	    <epsilon.xml.loadModel name="BM" modelfile="${bookModel}" metamodeluri="http://cs.york.ac.uk/" read="true" store="false"/>
-		<epsilon.xml.loadModel name="LM" modelfile="${libraryModel}" metamodeluri="http://cs.york.ac.uk/" read="true" store="false"/>
+	    <epsilon.xml.loadModel name="BM" file="${bookModel}" read="true" store="false"/>
+		<epsilon.xml.loadModel name="LM" file="${libraryModel}" read="true" store="false"/>
 	</target>
 	
 	<target name="main" depends="loadModels">
