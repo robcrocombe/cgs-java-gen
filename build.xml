@@ -1,4 +1,5 @@
 <project name="pacs-java-gen" default="main">
+	<description>An XML-to-Java generator</description>
 	<!-- #file -->
 	<property name="bookModel" value="" description="The Book XML model"/>
 	<!-- #file -->
