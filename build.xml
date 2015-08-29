@@ -1,21 +1,17 @@
 <project name="pacs-java-gen" default="main">
 	<description>An XML-to-Java generator</description>
 	<!-- #file -->
-	<property name="bookModel" value="" description="The Book XML model"/>
-	<!-- #file -->
-	<property name="libraryModel" value="" description="The library XML model"/>
+	<property name="model" value="" description="An XML model"/>
+	<!-- #string -->
+	<property name="className" value="" description="Name of the generated class"/>
 	
 	<target name="loadModels">
-	    <epsilon.xml.loadModel name="BM" file="${bookModel}" read="true" store="false"/>
-		<epsilon.xml.loadModel name="LM" file="${libraryModel}" read="true" store="false"/>
+	    <epsilon.xml.loadModel name="Class" file="${model}" read="true" store="false"/>
 	</target>
 	
 	<target name="main" depends="loadModels">
-		<epsilon.egl src="class.egl" outputroot="${outputRoot}" target="Book.java">
-			<model ref="BM"/>
-		</epsilon.egl>
-		<epsilon.egl src="class.egl" outputroot="${outputRoot}" target="Library.java">
-			<model ref="LM"/>
+		<epsilon.egl src="class.egl" outputroot="${outputRoot}" target="${className}.java">
+			<model ref="Class"/>
 		</epsilon.egl>
 	</target>
 </project>
