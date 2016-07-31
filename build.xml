@@ -2,8 +2,6 @@
 	<description>An XML-to-Java generator</description>
 	<!-- #file -->
 	<property name="model" value="" description="An XML model"/>
-	<!-- #string -->
-	<property name="className" value="" description="Name of the generated class"/>
 	
 	<target name="loadModels">
 	    <epsilon.xml.loadModel name="Class" file="${model}" read="true" store="false"/>
