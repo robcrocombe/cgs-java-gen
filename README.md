@@ -1,2 +1,2 @@
-# pacs-java-gen
-A generator for use in testing my project for Advanced Computer Science
+# cgs-java-gen
+A generator for use in testing [Code Generation Service](https://github.com/robcrocombe/code-generation-service)
